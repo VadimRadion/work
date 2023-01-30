@@ -1,0 +1,105 @@
+@import '../_variables.scss';
+@import '../_mixin.scss';
+
+
+
+.oxford {
+
+  background-image: url(../images/oxford-fon.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__block {
+    max-width: 508px;
+    padding-top: 150px;
+    padding-bottom: 171px;
+  }
+
+  &__title {
+    @include titleTextReset;
+    font-family: 'Playfair Display';
+    font-weight: 900;
+    font-size: 60px;
+    line-height: 120%;
+    color: #D5B986;
+  }
+
+  &__text {
+    @include titleTextReset;
+    margin-bottom: 71px;
+    font-size: 48px;
+    line-height: 57.6px;
+    color: $whiteColor;
+  }
+
+  &__link {
+    @include linkReset;
+    @include linkHero;
+    padding: 22px 31.5px;
+    transition: background-color .3s ease-in-out, outline-color .3s ease-in-out;
+  }
+}
+
+@media(max-width:1250px) {
+  .oxford {
+    background-image: url(../images/oxford-fon-1024.jpg);
+
+    &__block {
+      padding-top: 154px;
+    }
+
+    &__link {
+      padding: 19px 31.5px;
+    }
+  }
+}
+
+@media(max-width:1023px) {
+  .oxford {
+    &__container {
+      padding: 0 15px;
+    }
+
+    &__text {
+      margin-bottom: 68px;
+    }
+  }
+}
+
+@media(max-width:575px) {
+  .oxford {
+    background-image: url(../images/oxford-fon-320.png);
+
+    &__block {
+      max-width: 230px;
+      padding-top: 32px;
+      padding-bottom: 44px;
+    }
+
+    &__title {
+
+      font-size: 24px;
+      line-height: 120%;
+    }
+
+    &__text {
+      font-size: 16px;
+      line-height: 18px;
+
+    }
+
+    &__container {
+      position: relative;
+    }
+
+    &__link {
+      position: absolute;
+      width: 92%;
+      text-align: center;
+      bottom: -44%;
+      left: 4%;
+      right: 4%;
+      padding: 22px 87.5px;
+    }
+  }
+}

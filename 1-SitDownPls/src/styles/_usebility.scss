@@ -1,0 +1,995 @@
+@import '_variables.scss';
+@import '_mixin.scss';
+
+header {
+  .header__top {
+    .is-focused:focus-visible {
+      background-color: $pink-violet;
+
+    }
+
+    .choices:focus-visible[data-type*=select-one]::after {
+      border-top: 2px solid $primary-shade;
+      border-left: 2px solid $primary-shade;
+
+    }
+
+    @media screen and (any-hover: hover) {
+      .choices__inner:hover:not(:focus-visible) {
+        color: $primary-light;
+      }
+    }
+
+    .choices:hover:not(:focus-visible)[data-type*=select-one]::after {
+      border-top: 2px solid $primary-light;
+      border-left: 2px solid $primary-light;
+
+    }
+
+    .choices__inner:active:not(:focus-visible) {
+      color: $primary-shade;
+
+    }
+
+    .choices:active:not(:focus-visible)[data-type*=select-one]::after {
+      border-top: 2px solid $primary-shade;
+      border-left: 2px solid $primary-shade;
+
+    }
+
+    .is-open .choices__inner {
+      background-color: $gray_light;
+
+    }
+  }
+
+
+  .header__top-link:focus-visible::after {
+    opacity: 1;
+  }
+
+  @media screen and (any-hover: hover) {
+    .header__top-link:hover:not(:focus-visible) {
+      color: $secondary-light;
+    }
+  }
+
+  @media screen and (any-hover: hover) {
+    .header__top-link:hover:not(:focus-visible) svg path {
+      fill: $secondary-light;
+    }
+  }
+
+  .header__top-link:active:not(:focus-visible) {
+    color: $secondary-shade;
+
+  }
+
+  .header__top-link:active:not(:focus-visible) svg path {
+    fill: $secondary-shade;
+  }
+
+  .header__top-reference:focus-visible::after {
+    opacity: 1;
+  }
+
+  .header__top-reference:focus-visible {
+    color: $primary-shade;
+  }
+
+  @media screen and (any-hover: hover) {
+    .header__top-reference:hover:not(:focus-visible) {
+      color: $primary;
+    }
+  }
+
+  .header__top-reference:active:not(:focus-visible) {
+    color: $primary-shade;
+  }
+
+  .header__center-reference:focus-visible::after {
+    opacity: 1;
+  }
+
+  @media screen and (any-hover: hover) {
+    .header__center-reference:hover:not(:focus-visible) {
+      color: $primary;
+
+    }
+
+  }
+
+  .header__center-reference:active:not(:focus-visible) {
+    color: $primary-shade;
+  }
+
+  .header__bottom-input:focus-visible {
+    background-color: $pink-light;
+    outline: 2px solid;
+    outline-color: $primary;
+  }
+
+  @media screen and (any-hover: hover) {
+    .header__bottom-input:hover:not(:focus-visible) {
+      background-color: $md_gray;
+
+    }
+  }
+
+  .header__bottom-input:active+.header__bottom-search path {
+    fill: $primary;
+
+  }
+
+  .header__bottom-input:active {
+    outline: none;
+    background-color: $gray_light;
+  }
+
+
+
+
+  .header__bottom-button:focus-visible::after {
+    background-color: $primary-light;
+  }
+
+  .header__bottom-button:focus-visible::before {
+    border-top-color: $whiteColor;
+    border-left-color: $whiteColor;
+
+  }
+
+  @media screen and (any-hover: hover) {
+    .header__bottom-button:hover:not(:focus-visible)::after {
+      background-color: $primary;
+
+    }
+  }
+
+  @media screen and (any-hover: hover) {
+    .header__bottom-button:hover:not(:focus-visible)::before {
+      border-top-color: $whiteColor;
+      border-left-color: $whiteColor;
+
+    }
+  }
+
+  .header__bottom-button:active:not(:focus-visible)::after {
+    background-color: $primary-shade;
+    border-color: $primary-shade;
+  }
+
+  .header__bottom-button:active:not(:focus-visible)::before {
+    border-top-color: $whiteColor;
+    border-left-color: $whiteColor;
+
+  }
+
+
+
+
+
+  .header__bottom {
+    .is-focused:focus-visible {
+      background-color: $pink-light;
+      outline: 2px solid;
+      outline-color: $primary;
+    }
+
+    @media screen and (any-hover: hover) {
+      .choices:hover:not(:focus-visible) {
+        outline: 2px solid;
+        outline-color: $primary;
+      }
+    }
+
+    .choices:active:not(:focus-visible) {
+      outline: 2px solid;
+      outline-color: $primary-shade;
+
+    }
+
+    .is-open .choices__inner {
+      background-color: $whiteColor;
+    }
+  }
+
+  .header__buttom-link-private:focus-visible::after {
+    opacity: 1;
+  }
+
+  .header__buttom-link-private:focus-visible svg path {
+    fill: $whiteColor;
+  }
+
+  @media screen and (any-hover: hover) {
+    .header__buttom-link-private:hover:not(:focus-visible) svg path {
+      fill: $primary-light;
+
+    }
+  }
+
+  .header__buttom-link-private:active:not(:focus-visible) svg path {
+    fill: $primary-shade;
+  }
+
+  .header__buttom-link-basket:focus-visible::after {
+    opacity: 1;
+  }
+
+  .header__buttom-link-basket:focus-visible svg path {
+    fill: $whiteColor;
+  }
+
+  @media screen and (any-hover: hover) {
+    .header__buttom-link-basket:hover:not(:focus-visible) .basket-path {
+      fill: $primary-light;
+
+    }
+
+    .header__buttom-link-basket:active:not(:focus-visible) .basket-path {
+      fill: $primary-shade;
+    }
+
+  }
+
+}
+
+.hero__button:focus-visible {
+  background-color: $primary-light;
+  outline: 2px solid;
+  outline-color: $primary-shade;
+}
+
+@media screen and (any-hover: hover) {
+  .hero__button:hover:not(:focus-visible) {
+    background-color: $primary-light;
+
+
+  }
+}
+
+.hero__button:active:not(:focus-visible) {
+  background-color: $primary-shade;
+
+}
+
+.special-button-prev:focus-visible::after {
+  background-color: $primary-light;
+
+}
+
+.special-button-prev:focus-visible::before {
+  border-top-color: $whiteColor;
+  border-left-color: $whiteColor;
+
+}
+
+.special-button-prev:focus-visible {
+  border-top-color: $whiteColor;
+  border-left-color: $whiteColor;
+}
+
+@media screen and (any-hover: hover) {
+  .special-button-prev:hover:not(:focus-visible)::after {
+    background-color: $primary;
+
+  }
+}
+
+@media screen and (any-hover: hover) {
+  .special-button-prev:hover:not(:focus-visible)::before {
+    border-top-color: $whiteColor;
+    border-left-color: $whiteColor;
+  }
+}
+
+.special-button-prev:active:not(:focus-visible)::after {
+  background-color: $primary-shade;
+  border-color: $primary-shade;
+}
+
+.special-button-prev:active:not(:focus-visible)::before {
+  border-top-color: $whiteColor;
+  border-left-color: $whiteColor;
+
+}
+
+
+.special-button-next:focus-visible::after {
+  background-color: $primary-light;
+}
+
+.special-button-next:focus-visible::before {
+  border-top-color: $whiteColor;
+  border-left-color: $whiteColor;
+
+}
+
+@media screen and (any-hover: hover) {
+  .special-button-next:hover:not(:focus-visible)::after {
+    background-color: $primary;
+
+  }
+}
+
+@media screen and (any-hover: hover) {
+  .special-button-next:hover:not(:focus-visible)::before {
+    border-top-color: $whiteColor;
+    border-left-color: $whiteColor;
+  }
+}
+
+.special-button-next:active:not(:focus-visible)::after {
+  background-color: $primary-shade;
+  border-color: $primary-shade;
+}
+
+.special-button-next:active:not(:focus-visible)::before {
+  border-top-color: $whiteColor;
+  border-left-color: $whiteColor;
+
+}
+
+.special__link:focus-visible {
+  background-color: $primary-light;
+  color: $whiteColor;
+}
+
+@media screen and (any-hover: hover) {
+  .special__link:hover:not(:focus-visible) {
+    background-color: $primary;
+    color: $whiteColor;
+
+  }
+}
+
+.special__link:active:not(:focus-visible) {
+  background-color: $primary-shade;
+  border-color: $primary-shade;
+  color: $whiteColor;
+}
+
+.rating-link:focus-visible {
+  background-color: $primary-light;
+  color: $whiteColor;
+}
+
+@media screen and (any-hover: hover) {
+  .rating-link:hover:not(:focus-visible) {
+    background-color: $primary;
+    color: $whiteColor;
+
+  }
+}
+
+.rating-link:active:not(:focus-visible) {
+  background-color: $primary-shade;
+  color: $whiteColor;
+  border-color: $primary-shade;
+}
+
+.rating__button:focus-visible {
+  background-color: $primary-light;
+  outline: 2px solid;
+  outline-color: $primary-shade;
+}
+
+@media screen and (any-hover: hover) {
+  .rating__button:hover:not(:focus-visible) {
+    background-color: $primary-light;
+  }
+}
+
+.rating__button:active:not(:focus-visible) {
+  background-color: $primary-shade;
+
+}
+
+.oxford__link:focus-visible {
+  background-color: $primary-light;
+  outline: 2px solid;
+  outline-color: $primary-shade;
+}
+
+@media screen and (any-hover: hover) {
+  .oxford__link:hover:not(:focus-visible) {
+    background-color: $primary-light;
+
+  }
+}
+
+
+.oxford__link:active:not(:focus-visible) {
+  background-color: $primary-shade;
+
+}
+
+.category__link:focus-visible::after {
+  opacity: 1;
+}
+
+.category__link:focus-visible {
+  color: $primary-shade;
+}
+
+@media screen and (any-hover: hover) {
+  .category__link:hover:not(:focus-visible) {
+    color: $primary;
+  }
+}
+
+.category__link:active:not(:focus-visible) {
+  color: $primary-shade;
+}
+
+.category__reference:focus-visible svg .category__icon {
+  fill: $primary-light;
+}
+
+.category__reference:focus-visible::before {
+  opacity: 1;
+}
+
+.category__reference:focus-visible svg .category__icon-cursor {
+  stroke: $whiteColor;
+}
+
+@media screen and (any-hover: hover) {
+  .category__reference:hover:not(:focus-visible) .category__reference-svg .category__icon {
+    fill: $primary;
+  }
+}
+
+@media screen and (any-hover: hover) {
+  .category__reference:hover:not(:focus-visible)::before {
+    opacity: 1;
+  }
+}
+
+@media screen and (any-hover: hover) {
+  .category__reference:hover:not(:focus-visible) .category__reference-svg .category__icon-cursor {
+    stroke: $whiteColor;
+  }
+}
+
+.category__reference:active:not(:focus-visible) .category__reference-svg .category__icon {
+  fill: $primary-shade;
+}
+
+.category__reference:active:not(:focus-visible) {
+  color: $primary-shade;
+}
+
+.category__reference:active:not(:focus-visible) .category__reference-svg .category__icon-cursor {
+  stroke: $whiteColor;
+}
+
+.category__reference:active:not(:focus-visible) .category__reference-svg {
+  border-color: $primary-shade;
+}
+
+.category__reference:active:not(:focus-visible)::before {
+  opacity: 1;
+  border-color: $primary-shade;
+}
+
+.category__reference-link:active:not(:focus-visible)::before {
+  opacity: 0;
+}
+
+.usful__link:focus-visible {
+  background-color: $primary-light;
+  color: $whiteColor;
+}
+
+@media screen and (any-hover: hover) {
+  .usful__link:hover:not(:focus-visible) {
+    background-color: $primary;
+    color: $whiteColor;
+  }
+}
+
+.usful__link:active:not(:focus-visible) {
+  background-color: $primary-shade;
+  color: $whiteColor;
+  border-color: $primary-shade;
+}
+
+.feedback__button:focus-visible {
+  background-color: $primary-light;
+  outline: 2px solid;
+  outline-color: $primary-shade;
+}
+
+
+@media screen and (any-hover: hover) {
+  .feedback__button:hover:not(:focus-visible) {
+    background-color: $primary-light;
+
+  }
+}
+
+.feedback__button:active:not(:focus-visible) {
+  background-color: $primary-shade;
+
+}
+
+.footer__link-interior:focus-visible::before {
+  opacity: 1;
+}
+
+.footer__link-interior:focus-visible {
+  color: $primary-shade;
+}
+
+@media screen and (any-hover: hover) {
+  .footer__link-interior:hover:not(:focus-visible) {
+    color: $primary;
+  }
+}
+
+.footer__link-interior:active:not(:focus-visible) {
+  color: $primary-shade;
+}
+
+.usful-button-prev:focus-visible::after {
+  background-color: $primary-light;
+
+}
+
+.usful-button-prev:focus-visible::before {
+  border-top-color: $whiteColor;
+  border-left-color: $whiteColor;
+
+}
+
+@media screen and (any-hover: hover) {
+  .usful-button-prev:hover:not(:focus-visible)::after {
+    background-color: $primary;
+  }
+}
+
+@media screen and (any-hover: hover) {
+  .usful-button-prev:hover:not(:focus-visible)::before {
+    border-top-color: $whiteColor;
+    border-left-color: $whiteColor;
+  }
+}
+
+.usful-button-prev:active:not(:focus-visible)::after {
+  background-color: $primary-shade;
+  border-color: $primary-shade;
+}
+
+.usful-button-prev:active:not(:focus-visible)::before {
+  border-top-color: $whiteColor;
+  border-left-color: $whiteColor;
+
+}
+
+
+.usful-button-next:focus-visible::after {
+  background-color: $primary-light;
+}
+
+.usful-button-next:focus-visible::before {
+  border-top-color: $whiteColor;
+  border-left-color: $whiteColor;
+
+}
+
+@media screen and (any-hover: hover) {
+  .usful-button-next:hover:not(:focus-visible)::after {
+    background-color: $primary;
+  }
+}
+
+@media screen and (any-hover: hover) {
+  .usful-button-next:hover:not(:focus-visible)::before {
+    border-top-color: $whiteColor;
+    border-left-color: $whiteColor;
+  }
+}
+
+.usful-button-next:active:not(:focus-visible)::after {
+  background-color: $primary-shade;
+  border-color: $primary-shade;
+}
+
+.usful-button-next:active:not(:focus-visible)::before {
+  border-top-color: $whiteColor;
+  border-left-color: $whiteColor;
+
+}
+
+.footer__link-social:focus-visible svg path {
+  fill: $whiteColor;
+}
+
+.footer__link-social:focus-visible::after {
+  opacity: 1;
+}
+
+@media screen and (any-hover: hover) {
+  .footer__link-social:hover:not(:focus-visible) svg path {
+    fill: $primary;
+  }
+}
+
+.footer__link-social:active:not(:focus-visible) svg path {
+  fill: $primary-shade;
+}
+
+.feedback__input:focus-visible {
+  background-color: $pink-violet;
+  outline: 1px solid;
+  outline-color: $primary;
+}
+
+@media screen and (any-hover: hover) {
+  .feedback__input:hover:not(:focus-visible) {
+    background-color: $md_gray;
+  }
+}
+
+.feedback__input:active:not(:focus-visible) {
+  outline: 1px solid;
+  outline-color: $green-input;
+  background-color: $gray_light;
+}
+
+.feedback__link:focus-visible::after {
+  opacity: 1;
+}
+
+.feedback__link:focus-visible {
+  color: $gray;
+}
+
+@media screen and (any-hover: hover) {
+  .feedback__link:hover:not(:focus-visible) {
+    color: $primary-shade;
+  }
+}
+
+.feedback__link:active:not(:focus-visible) {
+  color: $primary-shade;
+}
+
+//----------------catalog
+
+
+.catalog__button:focus-visible {
+  background-color: $primary-light;
+  color: $whiteColor;
+}
+
+@media screen and (any-hover: hover) {
+  .catalog__button:hover:not(:focus-visible) {
+    background-color: $primary;
+    color: $whiteColor;
+
+  }
+}
+
+
+
+.catalog__link:focus-visible::before {
+  opacity: 1;
+}
+
+@media screen and (any-hover: hover) {
+  .catalog__link:hover:not(:focus-visible)::before {
+    opacity: 1;
+  }
+}
+
+
+.catalog__link:active:not(:focus-visible) {
+  color: $primary-shade;
+}
+
+
+.catalog__link:active:not(:focus-visible)::before {
+  opacity: 1;
+  border-color: $primary-shade;
+}
+
+.catalog {
+  .breadcrumb-link:focus-visible::before {
+    opacity: 1;
+  }
+
+  @media screen and (any-hover: hover) {
+    .breadcrumb-link:hover:not(:focus-visible) {
+      color: $primary;
+    }
+
+  }
+
+  .breadcrumb-link:active:not(:focus-visible) {
+    color: $primary-shade;
+  }
+}
+
+.card {
+  .breadcrumb-link:focus-visible::before {
+    opacity: 1;
+  }
+
+  @media screen and (any-hover: hover) {
+    .breadcrumb-link:hover:not(:focus-visible) {
+      color: $primary;
+    }
+
+  }
+
+  .breadcrumb-link:active:not(:focus-visible) {
+    color: $primary-shade;
+  }
+}
+
+.card__input:focus-visible {
+  background-color: $pink-violet;
+  outline: 1px solid;
+  outline-color: $primary;
+}
+
+@media screen and (any-hover: hover) {
+  .card__input:hover:not(:focus-visible) {
+    background-color: $md_gray;
+  }
+}
+
+.card__input:active:not(:focus-visible) {
+  outline: 1px solid;
+  outline-color: $green-input;
+  background-color: $gray_light;
+}
+
+.card__link:focus-visible::after {
+  opacity: 1;
+}
+
+.card__link:focus-visible {
+  color: $gray;
+}
+
+@media screen and (any-hover: hover) {
+  .card__link:hover:not(:focus-visible) {
+    color: $primary-shade;
+  }
+}
+
+.card__link:active:not(:focus-visible) {
+  color: $primary-shade;
+}
+
+.card__button-submit:focus-visible {
+  background-color: $primary-light;
+  outline: 2px solid;
+  outline-color: $primary-shade;
+}
+
+
+@media screen and (any-hover: hover) {
+  .card__button-submit:hover:not(:focus-visible) {
+    background-color: $primary-light;
+  }
+}
+
+.card__button-submit:active:not(:focus-visible) {
+  background-color: $primary-shade;
+}
+
+.card__form-button:focus-visible svg path {
+  fill: $primary;
+}
+
+@media screen and (any-hover: hover) {
+  .card__form-button:hover:not(:focus-visible) svg path {
+    fill: $primary;
+  }
+}
+
+.card__form-button:active svg path {
+  fill: $primary-shade;
+}
+
+.card__feedback-button:focus-visible svg path {
+  fill: $primary;
+}
+
+@media screen and (any-hover: hover) {
+  .card__feedback-button:hover:not(:focus-visible) svg path {
+    fill: $primary;
+  }
+}
+
+.card__feedback-button:active svg path {
+  fill: $primary-shade;
+}
+
+.card__button-swiper:focus-visible svg path {
+  fill: $primary;
+}
+
+@media screen and (any-hover: hover) {
+  .card__button-swiper:hover:not(:focus-visible) svg path {
+    fill: $primary;
+  }
+}
+
+.card__button-swiper:active svg path {
+  fill: $primary-shade;
+}
+
+.card__button:focus-visible {
+  background-color: $primary-light;
+  outline: 2px solid;
+  outline-color: $primary-shade;
+}
+
+
+@media screen and (any-hover: hover) {
+  .card__button:hover:not(:focus-visible) {
+    background-color: $primary-light;
+  }
+}
+
+.card__button:active:not(:focus-visible) {
+  background-color: $primary-shade;
+}
+.products-button-prev:focus-visible::after {
+  background-color: $primary-light;
+
+}
+
+.products-button-prev:focus-visible::before {
+  border-top-color: $whiteColor;
+  border-left-color: $whiteColor;
+
+}
+
+.products-button-prev:focus-visible {
+  border-top-color: $whiteColor;
+  border-left-color: $whiteColor;
+}
+
+@media screen and (any-hover: hover) {
+  .products-button-prev:hover:not(:focus-visible)::after {
+    background-color: $primary;
+
+  }
+}
+
+@media screen and (any-hover: hover) {
+  .products-button-prev:hover:not(:focus-visible)::before {
+    border-top-color: $whiteColor;
+    border-left-color: $whiteColor;
+  }
+}
+
+.products-button-prev:active:not(:focus-visible)::after {
+  background-color: $primary-shade;
+  border-color: $primary-shade;
+}
+
+.products-button-prev:active:not(:focus-visible)::before {
+  border-top-color: $whiteColor;
+  border-left-color: $whiteColor;
+
+}
+
+
+.products-button-next:focus-visible::after {
+  background-color: $primary-light;
+}
+
+.products-button-next:focus-visible::before {
+  border-top-color: $whiteColor;
+  border-left-color: $whiteColor;
+
+}
+
+@media screen and (any-hover: hover) {
+  .products-button-next:hover:not(:focus-visible)::after {
+    background-color: $primary;
+
+  }
+}
+
+@media screen and (any-hover: hover) {
+  .products-button-next:hover:not(:focus-visible)::before {
+    border-top-color: $whiteColor;
+    border-left-color: $whiteColor;
+  }
+}
+
+.products-button-next:active:not(:focus-visible)::after {
+  background-color: $primary-shade;
+  border-color: $primary-shade;
+}
+
+.products-button-next:active:not(:focus-visible)::before {
+  border-top-color: $whiteColor;
+  border-left-color: $whiteColor;
+
+}
+
+.card-button-prev:focus-visible::after {
+  background-color: $primary-light;
+
+}
+
+.card-button-prev:focus-visible::before {
+  border-top-color: $whiteColor;
+  border-left-color: $whiteColor;
+
+}
+
+.card-button-prev:focus-visible {
+  border-top-color: $whiteColor;
+  border-left-color: $whiteColor;
+}
+
+@media screen and (any-hover: hover) {
+  .card-button-prev:hover:not(:focus-visible)::after {
+    background-color: $primary;
+
+  }
+}
+
+@media screen and (any-hover: hover) {
+  .card-button-prev:hover:not(:focus-visible)::before {
+    border-top-color: $whiteColor;
+    border-left-color: $whiteColor;
+  }
+}
+
+.card-button-prev:active:not(:focus-visible)::after {
+  background-color: $primary-shade;
+  border-color: $primary-shade;
+}
+
+.card-button-prev:active:not(:focus-visible)::before {
+  border-top-color: $whiteColor;
+  border-left-color: $whiteColor;
+
+}
+
+
+.card-button-next:focus-visible::after {
+  background-color: $primary-light;
+}
+
+.card-button-next:focus-visible::before {
+  border-top-color: $whiteColor;
+  border-left-color: $whiteColor;
+
+}
+
+@media screen and (any-hover: hover) {
+  .card-button-next:hover:not(:focus-visible)::after {
+    background-color: $primary;
+
+  }
+}
+
+@media screen and (any-hover: hover) {
+  .card-button-next:hover:not(:focus-visible)::before {
+    border-top-color: $whiteColor;
+    border-left-color: $whiteColor;
+  }
+}
+
+.card-button-next:active:not(:focus-visible)::after {
+  background-color: $primary-shade;
+  border-color: $primary-shade;
+}
+
+.card-button-next:active:not(:focus-visible)::before {
+  border-top-color: $whiteColor;
+  border-left-color: $whiteColor;
+}

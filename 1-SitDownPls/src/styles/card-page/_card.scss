@@ -1,0 +1,1621 @@
+@import '../_variables.scss';
+@import '../_mixin.scss';
+@import '../_grid.scss';
+@import'../catalog-page/_catalog.scss';
+
+.card {
+  padding-top: 20px;
+  padding-bottom: 76px;
+
+  .breadcrumb {
+    padding: 0;
+    background-color: $whiteColor;
+  }
+
+  &__nav-breadcrumb {
+    margin-bottom: 32px
+  }
+
+  .breadcrumb-list {
+    @include listReset;
+    display: flex;
+  }
+
+  .breadcrumb-link {
+    position: relative;
+    @include linkReset;
+    color: $gray;
+    z-index: 0;
+    transition: color .3s ease-in-out;
+    
+  }
+
+  .breadcrumb-link::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -4px;
+    bottom: 0;
+    left: -4px;
+    background-color: #ebd1ff;
+    opacity: 0;
+    transition: opacity .3s ease-in-out, bacground-color .3s ease-in-out;
+    z-index: -1;
+  }
+
+  .breadcrumb-item.active {
+    color: $primary-shade;
+
+  }
+
+  .breadcrumb-item {
+    color: $primary-shade;
+    font-size: 14px;
+    line-height: 100%;
+  }
+
+  .breadcrumb-item:not(:last-child)::after {
+    display: inline-block;
+    margin-right: 2px;
+    padding-left: 3px;
+    content: '/';
+
+  }
+
+  &__block-left {
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+    margin-right: 32px;
+
+  }
+
+  &__images-one {
+    cursor: pointer;
+    margin-bottom: 16px;
+  }
+
+  .card-button-next {
+    display: none;
+  }
+
+  .card-button-prev {
+    display: none;
+  }
+
+
+
+  .mySwiper2 {
+    padding: 50px 107px 50px 107px;
+    position: relative;
+  }
+
+  .mySwiper {
+    padding: 20px 51px 20px 51px;
+    background-color: $grey_light;
+  }
+
+  .swiper-slide-modal {
+    width: auto;
+    cursor: pointer;
+  }
+
+  &__block-top {
+    position: relative;
+    display: flex;
+  }
+
+  &__block-swiper {
+    position: absolute;
+    width: 100%;
+    top: -33%;
+    border-radius: 10px;
+    background-color: $whiteColor;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+    z-index: 100;
+    box-shadow: 0px 0px 1000px rgb(0 0 0 / 100%);
+
+  }
+
+  &__block-swiper--active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__button-swiper {
+    @include buttonReset;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+  }
+
+  &__button-swiper svg path {
+    transition: fill .3s ease-in-out;
+  }
+
+  &__block-right {
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+    padding-top: 39px
+  }
+
+
+  &__title {
+    @include titleTextReset;
+    position: relative;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 130%;
+    margin-bottom: 8px;
+  }
+
+  &__title::before {
+    content: '4,8';
+    position: absolute;
+    top: -64%;
+    font-size: 16px;
+    line-height: 130%;
+    color: $secondary;
+    background-image: url(../images/rating-star.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-left: 22px;
+  }
+
+  &__text {
+    @include titleTextReset;
+    font-size: 14px;
+    line-height: 100%;
+    color: $gray;
+    margin-bottom: 17px;
+  }
+
+  &__price {
+    @include titleTextReset;
+    display: inline-block;
+    font-size: 36px;
+    line-height: 130%;
+    margin-bottom: 19px;
+  }
+
+  &__button {
+    @include buttonReset;
+    max-width: 230px;
+    padding: 19px 35px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    color: $whiteColor;
+    background-color: $primary;
+    margin-bottom: 15px;
+    transition: background-color .3s ease-in-out
+  }
+
+  &__links {
+
+    max-width: 230px;
+    font-size: 16px;
+    line-height: 130%;
+    color: $primary;
+  }
+
+  &__block-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 230px;
+  }
+
+
+
+
+
+
+
+  &__form-button {
+    @include buttonReset;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+
+  &__form-button svg path {
+    transition: fill .3s ease-in-out;
+  }
+
+  &__form {
+    position: absolute;
+    max-width: 624px;
+    left: 25%;
+    right: 25%;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+    padding: 30px;
+    border-radius: 10px;
+    z-index: 30;
+    background-color: $whiteColor;
+    box-shadow: 0px 0px 1000px rgb(0 0 0 / 100%);
+  }
+
+  &__form--active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__form-title {
+    @include titleTextReset;
+    max-width: 374px;
+    margin-bottom: 8px;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 100%;
+
+  }
+
+  &__form-text {
+    @include titleTextReset;
+    max-width: 374px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  &__text {
+    @include titleTextReset;
+    font-size: 14px;
+    line-height: 19px;
+    color: $grey_shade;
+    margin-bottom: 15px;
+
+  }
+
+
+
+  &__form-error {
+    margin-bottom: 30px;
+  }
+
+  &__input {
+    width: 564px;
+    height: 54px;
+    outline: none;
+    border: none;
+    padding: 0;
+    background-color: $gray_light;
+    border-radius: 10px;
+    padding-left: 18px;
+    padding-top: 3px;
+    font-size: 16px;
+    line-height: 40px;
+    transition: background-color .3s ease-in-out, outline-color .3s ease-in-out;
+
+  }
+
+  &__input::placeholder {
+    color: $gray;
+    font-size: 16px;
+    line-height: 40px;
+  }
+
+  &__button-submit {
+    @include buttonReset;
+    width: 159px;
+    padding: 19px 35px;
+    background-color: $primary;
+    color: $whiteColor;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    transition: background-color .3s ease-in-out, outline-color .3s ease-in-out;
+  }
+
+  &__input-checkbox {
+    -webkit-appearance: none;
+  }
+
+  &__custom-checkbox {
+    position: relative;
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 19px;
+    cursor: pointer;
+  }
+
+  &__check-box {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    border: 1px solid;
+    border-color: $gray;
+    border-radius: 2px;
+  }
+
+
+  &__check-box::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    left: -1px;
+    bottom: -1px;
+    opacity: 0;
+    visibility: hidden;
+    background-color: $primary;
+    background-image: url(../images/checkbox.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+    border-radius: 2px;
+  }
+
+  &__input-checkbox:checked+&__check-box::before {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__input-checkbox:checked+&__check-box {
+    border-color: $primary;
+    transition: background-color .3s ease-in-out;
+  }
+
+  &__link {
+    @include linkReset;
+    position: relative;
+    font-size: 16px;
+    line-height: 130%;
+    color: $primary;
+    z-index: 0;
+    transition: color .3s ease-in-out;
+
+  }
+
+  &__link::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -5px;
+    bottom: 0;
+    left: -5px;
+    background-color: $pink-violet;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity .3s ease-in-out, background-color .3s ease-in-out;
+  }
+
+
+  &__label {
+    position: relative;
+  }
+
+  &__freeback {
+    position: absolute;
+    width: 624px;
+    height: 421px;
+    left: 25%;
+    right: 25%;
+    opacity: 0;
+    visibility: hidden;
+    background-image: url(../images/card__feedback-fon.jpg);
+    background-repeat: no-repeat;
+    background-position: 44% 39%;
+    padding: 267px 75px 122px 75px;
+    background-color: $whiteColor;
+    border-radius: 10px;
+    z-index: 30;
+    background-color: $whiteColor;
+    box-shadow: 0px 0px 1000px rgb(0 0 0 / 80%);
+    transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+  }
+
+  &__feedback--active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__feedback-button {
+    @include buttonReset;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+
+  &__feedback-button svg path {
+    transition: fill .3s ease-in-out;
+  }
+
+  &__freeback-text {
+    @include titleTextReset;
+    font-size: 32px;
+    line-height: 100%;
+
+
+  }
+
+  &__block {
+    display: flex;
+  }
+
+  &__block-bottom-left {
+
+    width: 49.2%;
+    padding-top: 34px;
+    margin-right: 32px;
+  }
+
+  &__text-bottom {
+    @include titleTextReset;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+  }
+
+  &__text-description {
+    @include titleTextReset;
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 180%;
+  }
+
+  .card__text-description-one {
+    margin-bottom: 7px;
+  }
+
+  &__block-img {
+    padding-top: 107px;
+  }
+
+  &__image {
+    margin-right: 27px;
+  }
+
+  &__block-bottom-right {
+    width: 49%;
+    padding-top: 31px;
+  }
+
+  &__block-bottom-text {
+    @include titleTextReset;
+    display: flex;
+  }
+
+  &__name {
+    display: block;
+    font-size: 14px;
+    line-height: 180%;
+    color: $gray;
+  }
+
+  &__dot {
+    display: block;
+    color: $gray;
+
+
+  }
+
+  .card-dot-1 {
+    position: relative;
+    width: 265px;
+  }
+
+  .card-dot-1::after {
+    content: '............................................................';
+    position: absolute;
+    width: 100%;
+    top: 14px;
+    bottom: 0;
+    left: 4px;
+    right: 4px;
+    font-weight: 400;
+    font-size: 5px;
+    letter-spacing: 0.6em;
+
+  }
+
+  .card-dot-2 {
+    position: relative;
+    width: 274px;
+  }
+
+  .card-dot-2::after {
+    content: '..............................................................';
+    position: absolute;
+    width: 100%;
+    top: 14px;
+    bottom: 0;
+    left: 4px;
+    right: 4px;
+    font-weight: 400;
+    font-size: 5px;
+    letter-spacing: 0.6em;
+
+  }
+  .card-dot-3 {
+    position: relative;
+    width: 286px;
+  }
+  .card-dot-3::after {
+    content: '.................................................................';
+    position: absolute;
+    width: 100%;
+    top: 14px;
+    bottom: 0;
+    left: 4px;
+    right: 4px;
+    font-weight: 400;
+    font-size: 5px;
+    letter-spacing: 0.6em;
+
+  }
+  .card-dot-4 {
+    position:relative;
+    width: 279px;
+  }
+  .card-dot-4::after {
+    content: '...............................................................';
+    position: absolute;
+    width: 100%;
+    top: 14px;
+    bottom: 0;
+    left: 4px;
+    right: 4px;
+    font-weight: 400;
+    font-size: 5px;
+    letter-spacing: 0.6em;
+
+  }
+
+  .card-dot-5 {
+    position: relative;
+    width: 273px;
+  }
+  .card-dot-5::after {
+    content: '..............................................................';
+    position: absolute;
+    width: 100%;
+    top: 14px;
+    bottom: 0;
+    left: 4px;
+    right: 4px;
+    font-weight: 400;
+    font-size: 5px;
+    letter-spacing: 0.6em;
+
+  }
+  .card-dot-6 {
+    position: relative;
+    width: 219px;
+  }
+  .card-dot-6::after {
+    content: '.................................................';
+    position: absolute;
+    width: 100%;
+    top: 14px;
+    bottom: 0;
+    left: 4px;
+    right: 4px;
+    font-weight: 400;
+    font-size: 5px;
+    letter-spacing: 0.6em;
+
+  }
+  .card-dot-7 {
+    position: relative;
+    width: 220px;
+  }
+  .card-dot-7::after {
+    content: '.................................................';
+    position: absolute;
+    width: 100%;
+    top: 14px;
+    bottom: 0;
+    left: 4px;
+    right: 4px;
+    font-weight: 400;
+    font-size: 5px;
+    letter-spacing: 0.6em;
+
+  }
+  .card-dot-8 {
+    position: relative;
+    width: 259px;
+  }
+  .card-dot-8::after {
+    content: '..........................................................';
+    position: absolute;
+    width: 100%;
+    top: 14px;
+    bottom: 0;
+    left: 4px;
+    right: 4px;
+    font-weight: 400;
+    font-size: 5px;
+    letter-spacing: 0.6em;
+
+  }
+  .card-dot-9 {
+    position: relative;
+    width: 253px;
+  }
+  .card-dot-9::after {
+    content: '.........................................................';
+    position: absolute;
+    width: 100%;
+    top: 14px;
+    bottom: 0;
+    left: 4px;
+    right: 4px;
+    font-weight: 400;
+    font-size: 5px;
+    letter-spacing: 0.6em;
+
+  }
+  .card-dot-10 {
+    position: relative;
+    width: 297px;
+  }
+  .card-dot-10::after {
+    content: '...................................................................';
+    position: absolute;
+    width: 100%;
+    top: 14px;
+    bottom: 0;
+    left: 4px;
+    right: 4px;
+    font-weight: 400;
+    font-size: 5px;
+    letter-spacing: 0.6em;
+
+  }
+  .card-dot-11 {
+    position: relative;
+    width: 238px;
+  }
+
+  .card-dot-11::after {
+    content: '.....................................................';
+    position: absolute;
+    width: 100%;
+    top: 14px;
+    bottom: 0;
+    left: 4px;
+    right: 4px;
+    font-weight: 400;
+    font-size: 5px;
+    letter-spacing: 0.6em;
+
+  }
+  .card-dot-12 {
+    position: relative;
+    width: 206px;
+  }
+  .card-dot-12::after {
+    content: '..............................................';
+    position: absolute;
+    width: 100%;
+    top: 14px;
+    bottom: 0;
+    left: 4px;
+    right: 4px;
+    font-weight: 400;
+    font-size: 5px;
+    letter-spacing: 0.6em;
+
+  }
+  .card-dot-13 {
+    position: relative;
+    width: 215px;
+  }
+  .card-dot-13::after {
+    content: '................................................';
+    position: absolute;
+    width: 100%;
+    top: 14px;
+    bottom: 0;
+    left: 4px;
+    right: 4px;
+    font-weight: 400;
+    font-size: 5px;
+    letter-spacing: 0.6em;
+
+  }
+  .card-dot-14 {
+    position: relative;
+    width: 262px;
+  }
+  .card-dot-14::after {
+    content: '...........................................................';
+    position: absolute;
+    width: 100%;
+    top: 14px;
+    bottom: 0;
+    left: 4px;
+    right: 4px;
+    font-weight: 400;
+    font-size: 5px;
+    letter-spacing: 0.6em;
+
+  }
+  .card-dot-15 {
+    position: relative;
+    width: 277px;
+  }
+  .card-dot-15::after {
+    content: '...............................................................';
+    position: absolute;
+    width: 100%;
+    top: 14px;
+    bottom: 0;
+    left: 4px;
+    right: 4px;
+    font-weight: 400;
+    font-size: 5px;
+    letter-spacing: 0.6em;
+
+  }
+  &__term {
+    display: block;
+    max-width: 250px;
+    font-size: 14px;
+    line-height: 180%;
+  }
+}
+
+
+.js-validate-error-label {
+  position: absolute;
+  top: -170%;
+  left: 3%;
+  font-size: 12px;
+  line-height: 16px;
+  color: #FF6972;
+  ;
+
+}
+
+@media(max-width:1250px) {
+  .card {
+    padding-bottom: 67px;
+    padding-top: 24px;
+
+    &__block-left {
+      width: 62%;
+    }
+
+    &__block-right {
+      padding-top: 35px;
+    }
+
+    &__title {
+      margin-bottom: 4px;
+    }
+
+    &__text {
+      margin-bottom: 20px;
+    }
+
+    &__block-bottom-left {
+      width: 55%;
+      padding-top: 28px;
+      margin-right: 27px;
+    }
+
+    &__block-bottom-right {
+      width: 40%;
+    }
+
+    &__text-bottom {
+      margin-bottom: 9px;
+    }
+
+    &__block-img {
+      padding-top: 82px;
+    }
+
+    &__image {
+      margin-right: 20px;
+    }
+
+    .card-dot-1 {
+      width: 126px;
+    }
+    .card-dot-1::after{
+      content: '............................';
+    }
+
+    .card-dot-2 {
+      width: 133px;
+    }
+    .card-dot-2::after{
+      content: '.............................';
+    }
+    .card-dot-3 {
+      width: 146px;
+    }
+    .card-dot-3::after{
+      content: '.................................';
+    }
+    .card-dot-4 {
+      width: 140px;
+    }
+    .card-dot-4::after{
+      content: '...............................';
+    }
+
+    .card-dot-5 {
+      width: 134px;
+    }
+
+    .card-dot-5::after{
+      content: '..............................';
+    }
+    .card-dot-6 {
+      width: 79px;
+    }
+    .card-dot-6::after{
+      content: '.................';
+    }
+
+    .card-dot-7 {
+      width: 80px;
+    }
+    .card-dot-7::after{
+      content: '.................';
+    }
+
+    .card-dot-8 {
+      width: 118px;
+    }
+    .card-dot-8::after{
+      content: '..........................';
+    }
+
+    .card-dot-9 {
+      width: 112px;
+    }
+      .card-dot-9::after{
+      content: '.........................';
+    }
+
+    .card-dot-10 {
+      width: 156px;
+    }
+    .card-dot-10::after{
+      content: '...................................';
+    }
+
+    .card-dot-11 {
+      width: 99px;
+    }
+    .card-dot-11::after{
+      content: '......................';
+    }
+
+    .card-dot-12 {
+      width: 67px;
+    }
+    .card-dot-12::after{
+      content: '..............';
+    }
+
+    .card-dot-13 {
+      width: 76px;
+    }
+      .card-dot-13::after{
+      content: '................';
+    }
+
+    .card-dot-14 {
+      width: 121px;
+    }
+
+    .card-dot-14::after{
+      content: '...........................';
+    }
+    .card-dot-15 {
+      width: 136px;
+    }
+    .card-dot-15::after{
+      content: '..............................';
+    }
+
+    &__block-bottom-right {
+      width: 43%;
+      padding-top: 29px;
+    }
+
+    .mySwiper2 {
+      padding: 50px 66px;
+    }
+
+    .mySwiper {
+      padding: 19px 67px;
+      border-radius: 0 0 10px 10px;
+    }
+
+    .swiper-wrapper-2 {
+      max-height: 322px;
+    }
+
+    .card-button-next,
+    .card-button-prev {
+      display: block;
+    }
+
+    .card-button-next {
+      @include buttonReset;
+      width: 32px;
+      height: 32px;
+      top: 53%;
+    }
+
+
+    .card-button-next::after {
+      content: '';
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border: 2px solid;
+      border-color: $primary;
+      border-radius: 50%;
+      z-index: 0;
+      transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+    }
+
+    .card-button-next::before {
+      content: '';
+      position: absolute;
+      top: 35%;
+      bottom: 50%;
+      left: 31%;
+      right: 50%;
+      width: 8px;
+      height: 8px;
+      border-top: 2px solid;
+      border-top-color: $primary;
+      border-left: 2px solid;
+      border-left-color: $primary;
+      transform: rotate(135deg);
+      z-index: 1;
+      transition: border-top-color .3s ease-in-out, border-left-color .3s ease-in-out, ;
+
+    }
+
+
+
+    .card-button-prev {
+      @include buttonReset;
+      width: 32px;
+      height: 32px;
+      top: 53%;
+
+    }
+
+    .card-button-prev::after {
+      content: '';
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border: 2px solid;
+      border-color: $primary;
+      border-radius: 50%;
+      z-index: 0;
+      transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+    }
+
+    .card-button-prev::before {
+      content: '';
+      position: absolute;
+      top: 35%;
+      bottom: 50%;
+      left: 39%;
+      right: 50%;
+      width: 8px;
+      height: 8px;
+      border-top: 2px solid;
+      border-top-color: $primary;
+      border-left: 2px solid;
+      border-left-color: $primary;
+      transform: rotate(-45deg);
+      z-index: 1;
+      transition: border-top-color .3s ease-in-out, border-left-color .3s ease-in-out, ;
+
+    }
+
+    .card-button-prev,
+    .swiper-rtl .card-button-next {
+      left: 17px;
+      right: auto;
+    }
+
+    .card-button-prev:after,
+    .swiper-rtl .card-button-next:after {
+      content: '';
+    }
+
+    .card-button-next:after,
+    .swiper-rtl .card-button-prev:after {
+      content: '';
+    }
+
+    .card-button-next,
+    .swiper-rtl .card-button-prev {
+      right: 16px;
+
+    }
+
+    .card-button-prev.swiper-button-disabled::after,
+    .card-button-next.swiper-button-disabled::after {
+      border-color: $gray;
+    }
+
+    .card-button-prev.swiper-button-disabled::before,
+    .card-button-next.swiper-button-disabled::before {
+      border-top-color: $gray;
+      border-left-color: $gray;
+    }
+
+    .card-button-next.swiper-button-disabled,
+    .card-button-prev.swiper-button-disabled {
+      opacity: 1;
+
+    }
+
+    .swiper-backface-hidden .swiper-slide {
+      height: auto;
+
+    }
+
+    &__form {
+      left: 17.5%;
+      right: 15%;
+
+    }
+
+    &__links {
+      font-size: 14px;
+    }
+
+    &__button-submit {
+      margin-bottom: 11px;
+    }
+  }
+}
+
+@media(max-width:1023px) {
+  .card {
+    padding-bottom: 31px;
+
+    &__block-top {
+      flex-direction: column;
+    }
+
+    &__block-left {
+      width: 100%;
+      margin-right: 0;
+    }
+
+    &__block-right {
+      width: 100%;
+      padding-left: 220px;
+      background-image: url(../images/card__image-two-768.png);
+      background-repeat: no-repeat;
+      background-position: 0% 90%;
+      padding-top: 106px;
+      padding-bottom: 51px;
+    }
+
+    &__images-one {
+      margin-bottom: 0;
+    }
+
+    &__images-two {
+      display: none;
+    }
+
+    &__block {
+      flex-direction: column;
+    }
+
+    &__block-bottom-left {
+      width: 85%;
+    }
+
+    &__block-img {
+      padding-top: 30px;
+    }
+
+    &__block-bottom-right {
+      width: 100%;
+      padding-top: 26px;
+    }
+
+    .card-dot-1 {
+      width: 344px;
+    }
+    .card-dot-1::after{
+      content: '...............................................................................';
+    }
+
+
+    .card-dot-2 {
+      width: 352px;
+    }
+    .card-dot-2::after{
+      content: '................................................................................';
+    }
+    .card-dot-3 {
+      width: 363px;
+    }
+    .card-dot-3::after{
+      content: '...................................................................................';
+    }
+    .card-dot-4 {
+      width: 358px;
+    }
+    .card-dot-4::after{
+      content: '..................................................................................';
+    }
+    .card-dot-5 {
+      width: 352px;
+    }
+    .card-dot-5::after{
+      content: '.................................................................................';
+    }
+    .card-dot-6 {
+      width: 297px;
+    }
+    .card-dot-6::after{
+      content: '...................................................................';
+    }
+
+    .card-dot-7 {
+      width: 298px;
+    }
+    .card-dot-7::after{
+      content: '...................................................................';
+    }
+    .card-dot-8 {
+      width: 337px;
+    }
+    .card-dot-8::after{
+      content: '............................................................................';
+    }
+
+    .card-dot-9 {
+      width: 329px;
+    }
+    .card-dot-9::after{
+      content: '...........................................................................';
+    }
+
+    .card-dot-10 {
+      width: 374px;
+    }
+    .card-dot-10::after{
+      content: '.....................................................................................';
+    }
+
+    .card-dot-11 {
+      width: 315px;
+    }
+    .card-dot-11::after{
+      content: '.......................................................................';
+    }
+
+    .card-dot-12 {
+      width: 282px;
+    }
+    .card-dot-12::after{
+      content: '...............................................................';
+    }
+
+    .card-dot-13 {
+      width: 292px;
+    }
+    .card-dot-13::after{
+      content: '..................................................................';
+    }
+
+    .card-dot-14 {
+      width: 337px;
+    }
+    .card-dot-14::after{
+      content: '.............................................................................';
+    }
+    .card-dot-15 {
+      width: 352px;
+    }
+    .card-dot-15::after{
+      content: '................................................................................';
+    }
+    .swiper-wrapper-2 {
+      max-height: 228px;
+    }
+
+    .mySwiper2 {
+      padding: 50px 21px;
+    }
+
+    .mySwiper {
+      padding: 19px 80px;
+    }
+
+    &__form {
+      left: 0;
+      right: 0;
+    }
+
+    &__freeback {
+      right: 0;
+      left: 0;
+      width: 100%;
+    }
+
+  }
+}
+
+@media(max-width:646px) {
+  .card {
+    .card-dot-1 {
+      width: 244px;
+    }
+    .card-dot-1::after{
+      content: '.......................................................';
+    }
+
+    .card-dot-2 {
+      width: 252px;
+    }
+    .card-dot-2::after{
+      content: '.........................................................';
+    }
+    .card-dot-3 {
+      width: 263px;
+    }
+    .card-dot-3::after{
+      content: '............................................................';
+    }
+
+    .card-dot-4 {
+      width: 258px;
+    }
+    .card-dot-4::after{
+      content: '..........................................................';
+    }
+    .card-dot-5 {
+      width: 252px;
+    }
+    .card-dot-5::after{
+      content: '.........................................................';
+    }
+
+    .card-dot-6 {
+      width: 197px;
+    }
+    .card-dot-6::after{
+      content: '............................................';
+    }
+    .card-dot-7 {
+      width: 198px;
+    }
+    .card-dot-7::after{
+      content: '.............................................';
+    }
+    .card-dot-8 {
+      width: 237px;
+    }
+    .card-dot-8::after{
+      content: '......................................................';
+    }
+    .card-dot-9 {
+      width: 229px;
+    }
+    .card-dot-9::after{
+      content: '....................................................';
+    }
+
+    .card-dot-10 {
+      width: 274px;
+    }
+    .card-dot-10::after{
+      content: '..............................................................';
+    }
+
+    .card-dot-11 {
+      width: 215px;
+    }
+    .card-dot-11::after{
+      content: '................................................';
+    }
+    .card-dot-12 {
+      width: 182px;
+    }
+    .card-dot-12::after{
+      content: '.........................................';
+    }
+
+    .card-dot-13 {
+      width: 192px;
+    }
+    .card-dot-13::after{
+      content: '...........................................';
+    }
+    .card-dot-14 {
+      width: 237px;
+    }
+    .card-dot-14::after{
+      content: '......................................................';
+    }
+
+    .card-dot-15 {
+      width: 252px;
+    }
+    .card-dot-15::after{
+      content: '.........................................................';
+    }
+
+    .swiper-wrapper-2 {
+      max-height: 228px;
+    }
+  }
+}
+
+@media(max-width:575px) {
+  .card {
+    padding-top: 33px;
+    padding-bottom: 65px;
+
+    &__nav-breadcrumb {
+      display: none;
+    }
+
+    &__images-two {
+      display: block;
+    }
+
+    &__images-one {
+      margin-bottom: 16px;
+    }
+
+    &__block-right {
+      background-image: none;
+      padding-left: 0;
+    }
+
+    &__title {
+      font-size: 16px;
+      line-height: 130%;
+    }
+
+    &__block-right {
+      padding-top: 37px;
+      padding-bottom: 1px;
+    }
+
+    .card__title::before {
+      top: -107%;
+    }
+
+    &__text {
+      max-width: 82%;
+      line-height: 17px;
+      margin-bottom: 13px;
+    }
+
+    &__price {
+      font-size: 24px;
+      line-height: 130%;
+      margin-bottom: 16px;
+    }
+
+    &__block-bottom {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    &__button {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    &__block-bottom-left {
+      width: 99%;
+      margin-right: 0;
+    }
+
+    &__image {
+      margin-right: 8px;
+    }
+
+    &__dot {
+      display: none;
+    }
+
+    &__block-bottom-text {
+      flex-direction: column;
+    }
+
+    &__name {
+      font-size: 10px;
+      line-height: 14px;
+    }
+
+    &__term {
+      line-height: 192%;
+    }
+
+    &__block-bottom-right {
+      padding-top: 29px;
+    }
+
+    .mySwiper2 {
+      padding: 33px 16px;
+
+    }
+
+    .mySwiper {
+
+      padding: 16px 62px;
+    }
+
+    .swiper-wrapper-2 {
+      max-height: 102px;
+    }
+
+    &__button-swiper svg {
+      width: 12px;
+      height: 12px;
+
+    }
+
+    &__button-swiper {
+      top: 13px;
+      right: 16px;
+    }
+
+    .card-button-next,
+    .card-button-prev {
+      top: 54%;
+    }
+
+    .mySwiper-img1 {
+      width: 172px;
+      height: 86px;
+      width: 100%;
+    }
+
+    .mySwiper-img2 {
+      width: 172px;
+      height: 86px;
+      width: 100%;
+    }
+
+    .mySwiper-img3 {
+      width: 172px;
+      height: 86px;
+      width: 100%;
+    }
+
+    .mySwiper-img4 {
+      width: 172px;
+      height: 86px;
+      width: 100%;
+    }
+
+    &__images-two {
+      width: 100%;
+    }
+
+    &__form {
+      position: fixed;
+      max-width: 100%;
+      width: 93.7%;
+      top: 20%;
+      padding-left: 16px;
+      padding-right: 8px;
+      left: 10px;
+      right: 10px;
+      z-index: 30;
+
+    }
+
+    &__form-text {
+      margin-bottom: 13px;
+    }
+
+    &__form-title {
+      font-size: 24px;
+      line-height: 100%;
+    }
+
+    &__form-error {
+      margin-bottom: 17px;
+    }
+
+    &__input {
+      width: 100%;
+    }
+
+    &__form-button svg {
+      width: 12px;
+      height: 12px;
+
+    }
+
+    &__form-button {
+      top: 13px;
+      right: 16px;
+    }
+
+    &__custom-checkbox {
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    &__links {
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    .js-validate-error-label {
+      top: -161%;
+
+    }
+
+    &__freeback {
+      position: fixed;
+      width: 93.7%;
+      height: 216px;
+      top: 20%;
+      left: 10px;
+      right: 10px;
+      background-image: url(../images/card__feedback-fon-320.jpg);
+      background-position: 45% 37%;
+      padding: 125px 75px 0;
+      z-index: 6;
+    }
+
+    &__feedback-button svg {
+      width: 12px;
+      height: 12px;
+
+    }
+
+    &__feedback-button {
+      top: 13px;
+      right: 16px;
+    }
+
+    &__freeback-text {
+      font-size: 16px;
+      line-height: 100%;
+      text-align: center;
+    }
+
+    &__block-swiper {
+      position: fixed;
+      width: 92.7%;
+      top: 20%;
+    }
+
+  }
+}

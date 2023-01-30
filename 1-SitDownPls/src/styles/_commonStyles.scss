@@ -1,0 +1,174 @@
+@import '../styles/main-page/_header.scss';
+@import '../styles/main-page/_hero.scss';
+@import '../styles/main-page/_special.scss';
+@import '../styles/main-page/_rating.scss';
+@import '../styles/main-page/_oxford.scss';
+@import '../styles/main-page/_category.scss';
+@import '../styles/main-page/_usful.scss';
+@import '../styles/main-page/_feedback.scss';
+@import '_usebility.scss';
+@import '../styles/main-page/_footer.scss';
+@import '../styles/catalog-page/_catalog.scss';
+@import '../styles/card-page/_card.scss';
+@import '../styles/card-page/_products.scss';
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  position: relative;
+  font-family: 'Open Sans', 'Playfair Display', sans-serif;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+figure {
+  margin: 0px;
+}
+
+
+
+@font-face {
+  font-family: 'Open Sans';
+  src: local('OpenSansRegular'), local('OpenSans-Regular'),
+    url('../fonts/OpenSans-Regular.woff2') format('woff2'),
+    url('../fonts/OpenSans-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: local('OpenSansSemiBold'), local('OpenSans-SemiBold'),
+    url('../fonts/OpenSans-SemiBold.woff2') format('woff2'),
+    url('../fonts/OpenSans-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'Open Sans';
+  src: local('OpenSansBold'), local('OpenSans-Bold'),
+    url('../fonts/OpenSans-Bold.woff2') format('woff2'),
+    url('../fonts/OpenSans-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: local('PlayfairDisplay-Black'), local('PlayfairDisplayBlack'),
+    url('../fonts/PlayfairDisplay-Black.woff2') format('woff2'),
+    url('../fonts/PlayfairDisplay-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+
+.body-fon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, .5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+}
+
+.body-fon--active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.container {
+  max-width: 1310px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.stop-scroll {
+  overflow: hidden;
+}
+
+
+@media(max-width:1250px) {
+
+  .container {
+    padding: 0 36px;
+  }
+
+  .header__conatiner {
+    padding: 0;
+  }
+
+}
+
+@media(max-width:1023px) {
+
+  .container {
+    padding: 0 72px;
+  }
+
+  .header__conatiner {
+    padding: 0;
+  }
+
+  .oxford__container {
+    padding: 0 36px;
+  }
+
+}
+
+@media(max-width:767px) {
+
+  .container {
+    padding: 0 12px;
+  }
+
+  .header__conatiner {
+    padding: 0;
+  }
+
+}
+
+@media(max-width:575px) {
+
+  .header__center-container {
+    padding-left: 16px;
+  }
+
+
+}

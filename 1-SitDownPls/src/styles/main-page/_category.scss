@@ -1,0 +1,419 @@
+@import '../_variables.scss';
+@import '../_mixin.scss';
+@import '../_grid.scss';
+
+
+.category {
+  padding-top: 69px;
+  padding-bottom: 70px;
+
+  &__title {
+    @include titleTextReset;
+    @include title2;
+    margin-bottom: 26px;
+    font-size: 33px
+  }
+
+  &__reference-link {
+    display: none
+  }
+
+  &__list {
+    @include listReset;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    padding-top: 28px;
+    padding-bottom: 29px;
+    background-color: $gray_light;
+    border-radius: 10px;
+    padding-right: 20px;
+
+  }
+
+  &__item-1 {
+    grid-column: 1/7;
+    min-height: 511px;
+  }
+
+  &__item-2 {
+    grid-column: 7/13;
+    min-height: 511px;
+  }
+
+  &__item-3 {
+    grid-column: 1/5;
+    grid-row: 2;
+    min-height: 405px;
+  }
+
+  &__item-4 {
+    grid-column: 5/9;
+    grid-row: 2;
+    min-height: 405px;
+  }
+
+  &__item-5 {
+    grid-column: 9/13;
+    grid-row: 2;
+    min-height: 405px;
+  }
+
+  &__roster {
+    @include listReset;
+    display: flex;
+    margin-bottom: 12px;
+  }
+
+  &__clause:not(:last-child) {
+    margin-right: 32px;
+  }
+
+  &__clause-5 {
+    margin-right: 42px;
+  }
+
+  &__link {
+    position: relative;
+    @include linkReset;
+    font-size: 14px;
+    line-height: 100%;
+    color: $gray;
+    z-index: 0;
+    transition: color .3s ease-in-out;
+
+  }
+
+  &__link::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -10px;
+    right: -10px;
+    background-color: $pink-violet;
+    opacity: 0;
+    z-index: -1;
+    transition: background-color .3s ease-in-out, opacity .3s ease-in-out;
+  }
+
+  &__block-top {
+    padding-left: 30px;
+    margin-bottom: 29px;
+  }
+
+
+
+  &__text {
+    @include titleTextReset;
+    font-size: 24px;
+    line-height: 33px;
+  }
+
+  &__block-buttom {
+    margin-top: auto;
+    padding-left: 30px;
+  }
+
+
+  &__reference {
+    @include linkReset;
+    max-width: 109px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 120%;
+    color: $primary;
+    transition: color .3s ease-in-out;
+
+
+  }
+
+  &__reference-link {
+    display: none;
+  }
+
+  &__reference::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 2px;
+    border-bottom: 2px solid;
+    border-color: $primary;
+    opacity: 0;
+    transition: opacity .3s ease-in-out, border-color .3s ease-in-out;
+  }
+
+
+
+
+  &__reference-svg {
+    border: 2px solid;
+    border-color: $primary;
+    border-radius: 50%;
+    transform: rotate(-90deg);
+    transition: border-color .3s ease-in-out;
+  }
+
+  &__reference svg path {
+    transition: fill .3s ease-in-out;
+  }
+
+  &__reference svg path {
+    transition: stroke .3s ease-in-out;
+  }
+}
+
+@media(max-width:1250px) {
+  .category {
+    &__item-2 {
+      grid-column: 4/7;
+      grid-row: 2;
+      padding-right: 35px;
+    }
+
+    &__item-3 {
+      grid-row: 1;
+      grid-column: 7/11;
+      padding-right: 0;
+    }
+
+    &__item-4 {
+      grid-column: 1/4;
+      grid-row: 2;
+    }
+
+    &__item-5 {
+      grid-column: 7/11;
+      grid-row: 2;
+    }
+
+    &__block-top {
+      margin-bottom: 35px;
+    }
+
+  }
+}
+
+@media(max-width:1052px) {
+  .category {
+
+
+    &__item-3 {
+      grid-column: 7/10;
+
+
+    }
+
+
+
+    &__item-5 {
+      grid-column: 7/10;
+
+
+    }
+
+
+  }
+}
+
+@media(max-width:1023px) {
+  .category {
+    &__item {
+      padding-top: 30px;
+    }
+
+    &__item-1 {
+      grid-column: 1/2 span;
+
+    }
+
+    &__item-2 {
+      grid-column: 2/1 span;
+      grid-row: 2;
+    }
+
+    &__item-2 {
+      grid-column: 2/1 span;
+      grid-row: 2;
+    }
+
+    &__item-3 {
+      grid-column: 1/1 span;
+      grid-row: 2;
+
+    }
+
+    &__item-4 {
+      grid-column: 1/1 span;
+      grid-row: 3;
+      min-height: 511px;
+    }
+
+    &__item-5 {
+      grid-column: 2/1 span;
+      grid-row: 3;
+      min-height: 511px;
+      padding-right: 32px;
+
+    }
+
+
+  }
+}
+
+
+@media(max-width:767px) {
+  .category {
+    &__roster {
+      flex-direction: column;
+    }
+  }
+}
+
+@media(max-width:575px) {
+  .category {
+    padding-top: 162px;
+    padding-bottom: 75px;
+
+    &__title {
+      font-size: 24px;
+      line-height: 100%;
+    }
+
+    &__roster-top {
+      flex-direction: row;
+      padding-left: 13px;
+    }
+
+    &__roster {
+      padding-bottom: 1px;
+      margin-bottom: 4px;
+    }
+
+    &__item {
+      padding-bottom: 13px;
+    }
+
+    &__clause:not(:last-child) {
+      margin-right: 22px;
+    }
+
+    &__item-1 {
+      min-height: 332px;
+      padding-right: 0;
+      padding-top: 33px;
+
+    }
+
+    &__item-2 {
+      min-height: 206px;
+      padding-right: 0;
+      padding-top: 16px;
+    }
+
+    &__item-3 {
+      min-height: 206px;
+      padding-top: 16px;
+    }
+
+    &__item-4 {
+      min-height: 206px;
+      padding-right: 0;
+      padding-top: 16px;
+    }
+
+    &__item-5 {
+      min-height: 206px;
+      padding-right: 0px;
+      padding-top: 16px;
+    }
+
+    &__block-top {
+      position: relative;
+      padding-left: 17px;
+      margin-bottom: 13px;
+    }
+
+    &__block-buttom {
+      padding-left: 0;
+      margin-top: 0;
+    }
+
+    &__clause {
+      line-height: 71%;
+    }
+
+    &__text {
+      font-size: 16px;
+      line-height: 18px;
+      padding-top: 5px;
+      margin-bottom: 5px;
+      max-width: 83px;
+    }
+
+    &__text-1 {
+      font-size: 24px;
+      line-height: 33px;
+      padding-left: 13px;
+      padding-top: 5px;
+      margin-bottom: 0;
+    }
+
+    &__link {
+      font-size: 10px;
+      line-height: 100%;
+    }
+
+    &__link-1 {
+      font-size: 14px;
+      line-height: 100%;
+    }
+
+    &__reference {
+      display: none;
+    }
+
+    &__reference-link {
+      display: block;
+      position: absolute;
+      top: 62%;
+      right: 49%;
+    }
+
+    &__reference-link-2 {
+      right: 29%;
+    }
+
+    &__reference-link-3 {
+      top: 58%;
+      right: 22%;
+    }
+
+    &__reference-link-4 {
+      top: 67%;
+      right: 14%;
+    }
+
+    &__reference-link-5 {
+      top: 58%;
+      right: 30%;
+    }
+
+    &__reference-text {
+      display: none;
+    }
+
+    &__item-1 {
+      grid-column: 1/2 span;
+    }
+
+  }
+}

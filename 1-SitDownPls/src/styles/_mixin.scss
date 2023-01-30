@@ -1,0 +1,48 @@
+@mixin listReset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin titleTextReset {
+  margin: 0;
+}
+
+@mixin linkReset {
+  outline: none;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@mixin buttonReset {
+  outline: none;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+@mixin linkHero {
+  padding: 22px 47px;
+  width: 187px;
+  background: $primary;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+  color: $whiteColor;
+}
+
+@mixin title2 {
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 100%;
+  max-width: 1000px
+}
+
+@mixin hover {
+  @media screen and (any-hover: hover) {}
+
+
+}

@@ -1,0 +1,308 @@
+@import '../_variables.scss';
+@import '../_mixin.scss';
+
+
+.usful {
+  padding-bottom: 67px;
+
+  &__title {
+    @include titleTextReset;
+    @include title2;
+    margin-bottom: 25px;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    max-width: 624px;
+    display: flex;
+    flex-direction: column;
+    min-height: 676px;
+    padding-bottom: 27px;
+    background-color: $gray_light;
+    border-radius: 10px;
+  }
+
+  &__img {
+    border-radius: 10px 10px 0px 0px;
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  &__block {
+    position: absolute;
+    display: flex;
+    right: 2px;
+  }
+
+
+  .usful-button-next {
+    @include buttonReset;
+    position: relative;
+    width: 32px;
+    height: 32px;
+  }
+
+
+  .usful-button-next::after {
+    content: '';
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 2px solid;
+    border-color: $primary;
+    border-radius: 50%;
+    z-index: 0;
+    transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+  }
+
+  .usful-button-next::before {
+    content: '';
+    position: absolute;
+    top: 35%;
+    bottom: 50%;
+    left: 31%;
+    right: 50%;
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid;
+    border-top-color: $primary;
+    border-left: 2px solid;
+    border-left-color: $primary;
+    transform: rotate(135deg);
+    z-index: 1;
+    transition: border-top-color .3s ease-in-out, border-left-color .3s ease-in-out, ;
+
+  }
+
+
+  .usful-button-prev {
+    @include buttonReset;
+    position: relative;
+    width: 32px;
+    height: 32px;
+  }
+
+
+  .usful-button-prev::after {
+    content: '';
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 2px solid;
+    border-color: $primary;
+    border-radius: 50%;
+    z-index: 0;
+    transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+  }
+
+  .usful-button-prev::before {
+    content: '';
+    position: absolute;
+    top: 35%;
+    bottom: 50%;
+    left: 37%;
+    right: 50%;
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid;
+    border-top-color: $primary;
+    border-left: 2px solid;
+    border-left-color: $primary;
+    transform: rotate(-45deg);
+    z-index: 1;
+    transition: border-top-color .3s ease-in-out, border-left-color .3s ease-in-out, ;
+
+  }
+
+  .usful-button-prev.swiper-button-disabled::after,
+  .usful-button-next.swiper-button-disabled::after {
+    border-color: $gray;
+  }
+
+  .usful-button-prev.swiper-button-disabled::before,
+  .usful-button-next.swiper-button-disabled::before {
+    border-top-color: $gray;
+    border-left-color: $gray;
+  }
+
+  .usful-button-next.swiper-button-disabled,
+  .usful-button-prev.swiper-button-disabled {
+    opacity: 1;
+
+  }
+
+  .usful-button-prev,
+  .swiper-rtl .usful-button-next {
+    left: -19px;
+    right: auto;
+  }
+
+  .usful-button-next,
+  .usful-button-prev {
+
+    width: calc(var(--swiper-navigation-size)/ 44 * 35);
+
+    margin-top: calc(10px - (var(--swiper-navigation-size)/ 4));
+
+  }
+
+  .swiper-backface-hidden .swiper-slide {
+
+    height: auto;
+  }
+
+  &__block-text1 {
+
+    padding: 30px 27px 0 30px;
+  }
+
+  .usful-block-texts {
+    display: flex;
+    flex-direction: column;
+    min-height: 224px;
+    height: 100%;
+  }
+
+  &__block-text2 {
+
+    padding: 30px 27px 0 30px;
+  }
+
+  &__block-text3 {
+    padding: 30px 33px 0 30px;
+  }
+
+  &__block-text4 {
+    padding: 30px 41px 0 30px;
+  }
+
+  &__block-text5 {
+    padding: 30px 53px 0 30px;
+  }
+
+  &__text {
+    @include titleTextReset;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 33px;
+  }
+
+  &__link {
+    @include linkReset;
+    max-width: 128px;
+    margin-top: auto;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    padding: 19px 35px;
+    border: 2px solid $primary;
+    border-radius: 10px;
+    color: $primary;
+    transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  }
+}
+
+@media(max-width:1250px) {
+  .usful {
+
+    &__block {
+      right: 23px;
+      top: 2px;
+    }
+
+    &__item {
+      max-width: 480px;
+      min-height: 456px;
+    }
+
+    &__text {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    &__block-text1 {
+      padding: 26px 38px 0 30px;
+    }
+
+    &__block-text2 {
+      padding: 26px 38px 0 30px;
+    }
+
+    &__block-text3 {
+      padding: 26px 38px 0 30px;
+    }
+
+    &__block-text4 {
+      padding: 26px 38px 0 30px;
+    }
+
+    &__block-text5 {
+      padding: 26px 38px 0 30px;
+    }
+
+    &__block-text6 {
+      padding: 26px 38px 0 30px;
+    }
+  }
+}
+
+@media(max-width:1023px) {
+  .usful {
+
+    &__block {
+      right: 59px;
+      top: 3px;
+    }
+
+    &__title {
+      margin-bottom: 28px;
+    }
+
+    &__block-text1 {
+
+      padding-top: 27px;
+    }
+
+    &__block-text2 {
+      padding-top: 27px;
+    }
+  }
+}
+
+@media(max-width:767px) {
+  .usful {
+    &__block {
+      right: 3px;
+    }
+  }
+}
+
+@media(max-width:575px) {
+  .usful {
+    padding-bottom: 69px;
+
+    &__title {
+      font-size: 24px;
+      line-height: 100%;
+    }
+
+    &__block {
+      top: 103.5%;
+      right: 33.5%;
+    }
+  }
+}

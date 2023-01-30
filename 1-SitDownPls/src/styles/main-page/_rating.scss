@@ -1,0 +1,373 @@
+@import '../_variables.scss';
+@import '../_mixin.scss';
+@import '../_grid.scss';
+
+
+.rating {
+  padding-top: 74px;
+  padding-bottom: 73px;
+
+  &__title {
+    @include titleTextReset;
+    @include title2;
+    margin-bottom: 26px;
+  }
+
+  &__list {
+    margin-bottom: 36px;
+  }
+
+
+
+  &__button-more {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+  }
+
+  &__button {
+    @include buttonReset;
+    @include linkHero;
+    width: 296px;
+    padding: 20px 34px;
+    transition: background-color .3s ease-in-out, outline-color .3s ease-in-out;
+
+  }
+}
+
+.rating-item-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: $gray_light;
+  border-radius: 10px;
+  padding-bottom: 26px;
+
+}
+
+.rating-item-card:nth-child(n+9) {
+  display: none;
+}
+
+.rating-item-card.is-visible {
+  display: flex;
+}
+
+.rating-item-card::after {
+  content: '5,0';
+  position: absolute;
+  width: 25px;
+  top: 28px;
+  left: 30px;
+  background-image: url(../images/rating-star.png);
+  background-repeat: no-repeat;
+  background-position: left;
+  font-size: 16px;
+  line-height: 130%;
+  color: $secondary;
+  padding-left: 25px;
+}
+
+.rating-item-card:nth-child(2)::after {
+  content: '4,9';
+}
+
+.rating-item-card:nth-child(3)::after {
+  content: '4,8';
+}
+
+.rating-item-card:nth-child(4)::after {
+  content: '4,8';
+}
+
+.rating-item-card:nth-child(5)::after {
+  content: '4,8';
+}
+
+.rating-item-card:nth-child(6)::after {
+  content: '4,8';
+}
+
+.rating-item-card:nth-child(7)::after {
+  content: '4,8';
+}
+
+.rating-item-card:nth-child(8)::after {
+  content: '4,7';
+}
+
+
+.rating-text {
+  @include titleTextReset;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 130%;
+  margin-bottom: 24px;
+}
+
+.rating-price {
+  font-size: 16px;
+  line-height: 130%;
+  color: $grey_shade;
+}
+
+.rating-link {
+  @include linkReset;
+  width: 128px;
+  border: 2px solid $primary;
+  margin-top: auto;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  border-radius: 10px;
+  padding: 18px 35px;
+  color: $primary;
+  transition: background-color .3s ease-in-out, color .3s ease-in-out;
+}
+
+.rating-block-price {
+  display: flex;
+  flex-direction: column;
+  min-height: 185px;
+  height: 100%;
+}
+
+.rating-block-img-1 {
+  padding: 109px 15px 10px 15px;
+}
+
+.rating-block-1 {
+  padding: 0 48px 0 30px;
+}
+
+.rating-block-img-2 {
+  padding: 90px 18px 10px 17px;
+}
+
+.rating-block-2 {
+  padding: 0 30px 0 30px;
+}
+
+.rating-block-img-3 {
+  padding: 88px 17px 10px 17px;
+}
+
+.rating-block-3 {
+  padding: 0 48px 0 30px;
+}
+
+.rating-block-img-4 {
+  padding: 66px 20px 10px 19px;
+}
+
+.rating-block-4 {
+  padding: 0 48px 0 30px;
+}
+
+.rating-block-img-5 {
+  padding: 74px 15px 13px 16px;
+}
+
+.rating-block-5 {
+  padding: 0 48px 0 30px;
+}
+
+.rating-block-img-6 {
+  padding: 74px 13px 13px 12px;
+}
+
+.rating-block-6 {
+  padding: 0 49px 0 30px;
+}
+
+.rating-block-img-7 {
+  padding: 61px 15px 13px 15px;
+}
+
+.rating-block-7 {
+  padding: 0 37px 0 30px;
+}
+
+.rating-block-img-8 {
+  padding: 67px 42px 10px 42px;
+}
+
+.rating-block-8 {
+  padding: 0 48px 0 30px;
+}
+
+@media(max-width:1250px) {
+
+
+  .rating-item-card:nth-child(n+7) {
+    display: none;
+  }
+
+  .rating-item-card.is-visible {
+    display: flex;
+  }
+
+
+
+  .rating-block-4 {
+    padding-top: 3px;
+  }
+
+  .rating-block-5 {
+    padding-top: 3px;
+  }
+
+  .rating-block-6 {
+    padding-top: 3px;
+  }
+}
+
+@media(max-width:1023px) {
+  .rating {
+    padding-bottom: 71px;
+
+
+
+    &__button {
+      padding: 21px 34px;
+    }
+  }
+
+  .rating-item-card::after {
+    top: 32px;
+  }
+
+  .rating-block-img-3 {
+    padding: 93px 17px 10px;
+  }
+
+  .rating-block-img-4 {
+    padding: 69px 20px 10px 19px;
+  }
+}
+
+@media(max-width:575px) {
+
+  .rating {
+    padding-top: 121px;
+
+    &__title {
+      font-size: 24px;
+      line-height: 100%;
+    }
+
+    &__list {
+      margin-bottom: 32px;
+    }
+
+
+  }
+
+  .rating-item-card {
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-bottom: 19px;
+  }
+
+  .rating-text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    padding: 0;
+    margin-bottom: 16px;
+
+  }
+
+  .rating-block-1 {
+    padding: 0;
+    padding-right: 15px;
+  }
+
+  .rating-block-img-1 {
+    padding: 54px 0px 18px;
+  }
+
+  .rating-block-2 {
+    padding: 0;
+  }
+
+  .rating-block-img-2 {
+    padding: 48px 0px 15px 0px;
+  }
+
+  .rating-block-3 {
+    padding: 0;
+    padding-right: 15px;
+  }
+
+  .rating-block-img-3 {
+    padding: 46px 0px 14px;
+  }
+
+  .rating-block-4 {
+    padding: 0;
+  }
+
+  .rating-block-img-4 {
+    padding: 41px 0px 8px 0px;
+  }
+
+  .rating-block-5 {
+    padding: 0;
+    padding-right: 16px;
+  }
+
+  .rating-block-img-5 {
+    padding: 44px 0px 10px 0px;
+  }
+
+  .rating-block-img-6 {
+    padding: 46px 0px 10px 0px;
+  }
+
+  .rating-block-6 {
+    padding: 0;
+    padding-right: 16px;
+  }
+
+  .rating-block-img-7 {
+    padding: 45px 0px 7px 0px;
+  }
+
+  .rating-block-7 {
+    padding: 0;
+    padding-right: 16px;
+  }
+
+  .rating-block-img-8 {
+    padding: 38px 0px 2px 0px;
+  }
+
+  .rating-block-8 {
+    padding: 0;
+    padding-right: 16px;
+  }
+
+
+  .rating-link {
+    width: 110px;
+    padding: 10px 25px;
+
+  }
+
+  .rating-item-card::after {
+    font-size: 12px;
+    line-height: 130%;
+    background-image: url(../images/rating-star-320.png);
+    top: 17px;
+    left: 17px;
+    padding-left: 19px;
+  }
+
+  .rating-block-price {
+    min-height: 153px;
+  }
+
+
+}
