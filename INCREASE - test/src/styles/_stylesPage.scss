@@ -1,0 +1,262 @@
+@import '_variables.scss';
+@import '_mixin.scss';
+
+.header {
+
+    &__nav {
+        display: grid;
+        grid-template-columns: .7fr 2fr 4fr;
+        gap: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid $gray ;
+
+    }
+
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        min-height: 100px;
+        align-items: flex-end;
+        justify-content: center;
+        padding: 15px;
+        background-color: gray;
+    }
+
+
+
+    &__link {
+
+        color: $whiteColor;
+    }
+
+    &__mailto {
+        text-decoration: underline;
+    }
+}
+
+.content {
+    padding-top: 20px;
+
+    &__block {
+        display: flex;
+        border-bottom: 1px solid $gray;
+    }
+
+    &__title {
+        visibility: hidden;
+        height: 0;
+        margin: 0;
+        pointer-events: none;
+    }
+
+    &__left {
+        width: 16%;
+        height: fit-content;
+        padding: 15px;
+        margin-right: 20px;
+        background-color: $gray;
+        color: $whiteColor;
+    }
+
+    &__right {
+        width: 83%;
+        min-height: 200px;
+        padding-bottom: 20px;
+
+
+    }
+
+    &__right-top {
+        padding: 15px;
+        margin-bottom: 20px;
+        background-color: $gray-light;
+    }
+
+    &__right-list {
+        padding: 20px 0 20px 30px;
+    }
+
+    &__center-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        grid-auto-columns: 1fr;
+        gap: 20px;
+        margin-bottom: 20px;
+        @include listReset;
+    }
+
+    &__center-item {
+        min-height: 172px;
+        padding: 5px;
+        background-color: $gray-light;
+    }
+
+    &__right-bottom {
+        display: flex;
+    }
+
+    &__right-bottom-left {
+        width: 50%;
+        padding: 20px 20px 40px 20px;
+        margin-right: 20px;
+        background-color: $gray-light;
+    }
+
+    &__right-bottom-right {
+        width: 50%;
+        padding: 20px 20px 40px 20px;
+        background-color: $gray-light;
+    }
+}
+
+.footer {
+    padding-top: 20px;
+
+    &__block {
+        display: flex;
+    }
+
+    &__block-left {
+        width: 33%;
+        padding: 15px;
+        margin-right: 20px;
+        color: $whiteColor;
+        background-color: $gray;
+    }
+
+    &__block-left-list {
+        display: flex;
+        max-height: 150px;
+        flex-direction: column;
+        flex-wrap: wrap;
+        @include listReset;
+    }
+
+    &__block-left-item {
+        max-width: 90px;
+        line-height: 20px;
+    }
+
+    &__block-center {
+        width: 33%;
+        margin-right: 20px;
+        padding: 15px 15px 15px 30px;
+        color: $whiteColor;
+        background-color: $gray;
+    }
+
+    &__block-center-list {
+        @include listReset;
+    }
+
+    &__block-center-link {
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            left: -7px;
+            top: 35%;
+            background-color: $whiteColor;
+        }
+    }
+
+    &__block-right {
+        width: 33%;
+    }
+
+    &__block-right-top {
+        min-height: 82px;
+        margin-bottom: 20px;
+        padding: 15px;
+        background-color: $gray;
+    }
+
+    &__block-right-bottom {
+        min-height: 82px;
+        padding: 15px;
+        background-color: $gray;
+    }
+}
+
+@media(max-width: 1024px) {
+    .header {
+        &__nav {
+            grid-template-columns: 1fr;
+
+        }
+
+        &__item {
+            align-items: center;
+        }
+    }
+
+    .content {
+        &__block {
+            flex-direction: column;
+        }
+
+        &__left {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+
+        &__right {
+            width: 100%;
+        }
+    }
+}
+
+@media(max-width: 860px) {
+    .content {
+        &__right-bottom {
+            flex-direction: column;
+
+        }
+
+        &__right-bottom-left {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+
+        &__right-bottom-right {
+            width: 100%;
+        }
+    }
+
+    .footer {
+        &__block {
+            flex-direction: column;
+        }
+
+        &__block-left {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        &__block-center {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+
+        &__block-center-list {
+            text-align: center;
+        }
+
+        &__block-left-list {
+            align-items: center;
+        }
+
+        &__block-right {
+            width: 100%;
+        }
+    }
+}

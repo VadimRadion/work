@@ -1,0 +1,240 @@
+.header__nav {
+  display: grid;
+  grid-template-columns: 0.7fr 2fr 4fr;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid gray;
+}
+.header__item {
+  display: flex;
+  flex-direction: column;
+  min-height: 100px;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 15px;
+  background-color: gray;
+}
+.header__link {
+  color: white;
+}
+.header__mailto {
+  text-decoration: underline;
+}
+
+.content {
+  padding-top: 20px;
+}
+.content__block {
+  display: flex;
+  border-bottom: 1px solid gray;
+}
+.content__title {
+  visibility: hidden;
+  height: 0;
+  margin: 0;
+  pointer-events: none;
+}
+.content__left {
+  width: 16%;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 15px;
+  margin-right: 20px;
+  background-color: gray;
+  color: white;
+}
+.content__right {
+  width: 83%;
+  min-height: 200px;
+  padding-bottom: 20px;
+}
+.content__right-top {
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #EAEAEA;
+}
+.content__right-list {
+  padding: 20px 0 20px 30px;
+}
+.content__center-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  grid-auto-columns: 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+  list-style: none;
+}
+.content__center-item {
+  min-height: 172px;
+  padding: 5px;
+  background-color: #EAEAEA;
+}
+.content__right-bottom {
+  display: flex;
+}
+.content__right-bottom-left {
+  width: 50%;
+  padding: 20px 20px 40px 20px;
+  margin-right: 20px;
+  background-color: #EAEAEA;
+}
+.content__right-bottom-right {
+  width: 50%;
+  padding: 20px 20px 40px 20px;
+  background-color: #EAEAEA;
+}
+
+.footer {
+  padding-top: 20px;
+}
+.footer__block {
+  display: flex;
+}
+.footer__block-left {
+  width: 33%;
+  padding: 15px;
+  margin-right: 20px;
+  color: white;
+  background-color: gray;
+}
+.footer__block-left-list {
+  display: flex;
+  max-height: 150px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  list-style: none;
+}
+.footer__block-left-item {
+  max-width: 90px;
+  line-height: 20px;
+}
+.footer__block-center {
+  width: 33%;
+  margin-right: 20px;
+  padding: 15px 15px 15px 30px;
+  color: white;
+  background-color: gray;
+}
+.footer__block-center-list {
+  list-style: none;
+}
+.footer__block-center-link {
+  position: relative;
+}
+.footer__block-center-link::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  left: -7px;
+  top: 35%;
+  background-color: white;
+}
+.footer__block-right {
+  width: 33%;
+}
+.footer__block-right-top {
+  min-height: 82px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: gray;
+}
+.footer__block-right-bottom {
+  min-height: 82px;
+  padding: 15px;
+  background-color: gray;
+}
+
+@media (max-width: 1024px) {
+  .header__nav {
+    grid-template-columns: 1fr;
+  }
+  .header__item {
+    align-items: center;
+  }
+  .content__block {
+    flex-direction: column;
+  }
+  .content__left {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .content__right {
+    width: 100%;
+  }
+}
+@media (max-width: 860px) {
+  .content__right-bottom {
+    flex-direction: column;
+  }
+  .content__right-bottom-left {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .content__right-bottom-right {
+    width: 100%;
+  }
+  .footer__block {
+    flex-direction: column;
+  }
+  .footer__block-left {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .footer__block-center {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .footer__block-center-list {
+    text-align: center;
+  }
+  .footer__block-left-list {
+    align-items: center;
+  }
+  .footer__block-right {
+    width: 100%;
+  }
+}
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px 0 20px 0;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 30px;
+  margin: 0 auto;
+}/*# sourceMappingURL=style.css.map */
